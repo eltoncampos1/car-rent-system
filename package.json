@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "seed": "node ./seed"
+    "seed": "node ./seed",
+    "test": "yarn mocha -w --parallel ./test/**/*.test.js",
+    "test:cov": "yarn nyc yarn mocha --parallel ./test/**/*.test.js"
   },
   "license": "MIT",
   "devDependencies": {
