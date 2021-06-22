@@ -10,5 +10,8 @@
     "faker": "^5.5.3",
     "mocha": "8",
     "nyc": "15"
+  },
+  "dependencies": {
+    "sinon": "9"
   }
 }
