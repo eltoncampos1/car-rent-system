@@ -33,16 +33,16 @@ describe('Carservice Suite Tests', () => {
     })
 
     // deve retornar o primeiro id dos carIds
-    // it('should choose the first id from carIds in carcategory', () => {
-    //     const carCategory = mocks.validCarCategory
-    //     const carIdIndex = 0
+    it('should choose the first id from carIds in carcategory', () => {
+        const carCategory = mocks.validCarCategory
+        const carIdIndex = 0
 
-    //     const result = carService.chooseRandomCar(carCategory)
-    //     const expected = carCategory.carIds[carIdIndex]
+        const result = carService.chooseRandomCar(carCategory)
+        const expected = carCategory.carIds[carIdIndex]
 
-    //     // espera q o resultado seja o retorno de um carro random
-    //     expect(result).to.be.equal(expected)
-    // })
+        // espera q o resultado seja o retorno de um carro random
+        expect(result).to.be.equal(expected)
+    })
     // it('given a carCategory it should return an available car', async () => {
     //     const car = mocks.validCar
     //     // criando assim ele n muda o elemento pai
