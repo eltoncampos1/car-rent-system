@@ -65,17 +65,33 @@ describe('Carservice Suite Tests', () => {
         // espera q o resultado seja o retorno de um carro random
         expect(result).to.be.equal(expected)
     })
-    // it('given a carCategory it should return an available car', async () => {
-    //     const car = mocks.validCar
-    //     // criando assim ele n muda o elemento pai
-    //     const carCategory = Object.create(mocks.validCarCategory)
-    //     carCategory.ids = [car.id]
+    it('given a carCategory it should return an available car', async () => {
+        const car = mocks.validCar
+        // criando assim ele n muda o elemento pai
+        const carCategory = Object.create(mocks.validCarCategory)
+        carCategory.carIds = [car.id]
 
-    //     // verificando se a função retorna o carro selecionado
-    //     const result = await carService.getAvailableCar(carCategory)
-    //     const expected = car
+        // criar um sandobx para sempre retornar o mesmo carro
+        sandBox.stub(
+            carService.carRepository,
+            carService.carRepository.find.name
+        ).resolves(car)
 
-    //     // espera que o result seja igual ao expected
-    //     expect(result).to.be.deep.equal(expected)
-    // })
+        // fazer um spi para ver a função foi chamada como o esperado
+        sandBox.spy(
+            carService,
+            carService.chooseRandomCar.name
+        )
+
+        // verificando se a função retorna o carro selecionado
+        const result = await carService.getAvailableCar(carCategory)
+        const expected = car
+
+        // verificar se foi chamado só uma vez
+        expect(carService.chooseRandomCar.calledOnce).to.be.ok
+        // verificar se foi chamado com os params passados para ele
+        expect(carService.carRepository.find.calledWithExactly(car.id)).to.be.ok
+        // espera que o result seja igual ao expected
+        expect(result).to.be.deep.equal(expected)
+    })
 })
