@@ -1,6 +1,7 @@
-const { describe, it, before } = require('mocha')
+const { describe, it, before, beforeEach, afterEach } = require('mocha')
 const {join} = require('path')
 const { expect } = require('chai')
+const sinon = require('sinon')
 
 const Carservice = require('../../src/service/carService')
 
@@ -16,11 +17,22 @@ const mocks = {
 describe('Carservice Suite Tests', () => {
     // iniciando carSerice como um obj vazio
     let carService = {}
+    let sandBox = {}
     before(() => {
         // iniciando uma instancia do carService antes dos testes
         carService = new Carservice({
             cars: carsDatabase
         })
+    })
+
+    // criar um sandbox para sempre q os testes rodarem limparem todas as instacias
+    beforeEach(() => {
+        sandBox = sinon.createSandbox()
+    })
+
+    // depois que rodar tudo, resetar o objeto
+    afterEach(() => {
+        sandBox.restore()
     })
 
     // teste para verificar se retorna uma posição ramdomica no array
@@ -36,6 +48,14 @@ describe('Carservice Suite Tests', () => {
     it('should choose the first id from carIds in carcategory', () => {
         const carCategory = mocks.validCarCategory
         const carIdIndex = 0
+
+        // criar um stub do carService.getRamdomPositionFromArray para sempre retornar 0
+        sandBox.stub(
+            carService,
+            carService.getRamdomPositionFromArray.name
+        ).returns(carIdIndex)
+
+
 
         const result = carService.chooseRandomCar(carCategory)
         const expected = carCategory.carIds[carIdIndex]
