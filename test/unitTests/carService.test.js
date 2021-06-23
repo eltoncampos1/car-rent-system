@@ -45,7 +45,7 @@ describe('Carservice Suite Tests', () => {
     })
 
     // deve retornar o primeiro id dos carIds
-    it('should choose the first id from carIds in carcategory', () => {
+    it('should choose the first id from carIds in carCategory', () => {
         const carCategory = mocks.validCarCategory
         const carIdIndex = 0
 
@@ -60,6 +60,8 @@ describe('Carservice Suite Tests', () => {
         const result = carService.chooseRandomCar(carCategory)
         const expected = carCategory.carIds[carIdIndex]
 
+
+        expect(carService.getRamdomPositionFromArray.calledOnce).to.be.ok
         // espera q o resultado seja o retorno de um carro random
         expect(result).to.be.equal(expected)
     })
