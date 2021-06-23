@@ -139,7 +139,7 @@ describe('Carservice Suite Tests', () => {
 
         sandBox.stub(
             carService.carRepository,
-            carService.carRepository.name
+            carService.carRepository.find.name,
         ).resolves(car)
 
         const expectedAmount = carService.currencyFormat.format(206.80)
