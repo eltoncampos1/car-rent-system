@@ -1,1 +1,23 @@
-[{"id":"a98e01cc-d5f3-41af-9b27-e9a7e4b6e642","name":"2","releaseYear":2020,"available":true,"gasAvailable":true},{"id":"c624e96d-b545-4436-956c-5ab6f4874d72","name":"Ranchero","releaseYear":2020,"available":true,"gasAvailable":true},{"id":"715b006d-cc7f-4be4-b4bc-78d6d293578d","name":"Escalade","releaseYear":2020,"available":true,"gasAvailable":true}]
+[
+    {
+        "id": "7f2b45d4-6abf-4311-ab47-4158fff710ff",
+        "name": "A4",
+        "releaseYear": 2021,
+        "available": true,
+        "gasAvailable": true
+    },
+    {
+        "id": "a5f69c4e-73e0-4db9-90bc-2ac0f10a5842",
+        "name": "Charger",
+        "releaseYear": 2020,
+        "available": true,
+        "gasAvailable": true
+    },
+    {
+        "id": "183fffc3-8466-42b4-b0b5-cfa0f17bb577",
+        "name": "El Camino",
+        "releaseYear": 2021,
+        "available": true,
+        "gasAvailable": true
+    }
+]

@@ -1,1 +1,10 @@
-{"id":"5d421a9a-5ecc-422c-98cd-85773895792d","name":"Extended Cab Pickup","cardIds":["a98e01cc-d5f3-41af-9b27-e9a7e4b6e642","c624e96d-b545-4436-956c-5ab6f4874d72","715b006d-cc7f-4be4-b4bc-78d6d293578d"],"price":"68.44"}
+{
+    "id": "8f5e532b-facb-482e-920f-d7cdac3c5313",
+    "name": "Crew Cab Pickup",
+    "cardIds": [
+        "7f2b45d4-6abf-4311-ab47-4158fff710ff",
+        "a5f69c4e-73e0-4db9-90bc-2ac0f10a5842",
+        "183fffc3-8466-42b4-b0b5-cfa0f17bb577"
+    ],
+    "price": "67.16"
+}
