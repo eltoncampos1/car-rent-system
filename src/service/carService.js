@@ -22,7 +22,13 @@ class carService {
     }
 
     async getAvailableCar(carCategory) {
-        return null
+        // retorna um id random
+        const carId = this.chooseRandomCar(carCategory)
+
+        // vai no repositorio e procura um carro com o id acima
+        const car = await this.carRepository.find(carId)
+
+        return car;
     }
 }
 
